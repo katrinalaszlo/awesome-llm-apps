@@ -343,11 +343,7 @@ const demonstrationCatalogRenderers: CatalogRenderers<DemonstrationCatalogDefini
               <XAxis dataKey="label" tick={{ fontSize: 11, fill: c.muted }} />
               <YAxis tick={{ fontSize: 11, fill: c.muted }} />
               <Tooltip />
-              <Bar
-                dataKey="value"
-                fill={props.color ?? "#3b82f6"}
-                radius={[4, 4, 0, 0]}
-              />
+              <Bar dataKey="value" fill="#3b82f6" radius={[4, 4, 0, 0]} />
             </RechartsBar>
           </ResponsiveContainer>
         </div>
