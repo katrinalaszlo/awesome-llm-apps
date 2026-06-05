@@ -133,6 +133,10 @@ Delta Co,East,29000,35000
 - **Protocol**: AG-UI events + A2UI component schemas
 - **UI toolkit**: CopilotKit v2 + Recharts
 
+## Scaling beyond paste
+
+This demo works with paste-sized data. For production-sized datasets, swap `detect_schema` for a text-to-SQL tool that queries a database or a semantic layer like dbt metrics. The A2UI pattern (agent picks component, frontend renders) stays the same -- only the data source changes.
+
 ## Troubleshooting
 
 **Agent won't connect:** Make sure port 8123 is free and OPENAI_API_KEY is set in `.env`.
