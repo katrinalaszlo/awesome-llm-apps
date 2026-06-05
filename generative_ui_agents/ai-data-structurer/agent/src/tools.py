@@ -246,17 +246,6 @@ def transform_data(data: list[dict], operation: str, params: dict) -> dict:
     return {"error": f"Unknown operation: {operation}"}
 
 
-COMPONENT_MAP = {
-    "table": "DataTable",
-    "card_grid": "CardGrid",
-    "comparison": "ComparisonView",
-    "timeline": "Timeline",
-    "summary": "SummaryCard",
-    "dashboard": "Dashboard",
-    "bar_chart": "BarChart",
-    "pie_chart": "PieChart",
-}
-
 
 @tool
 def pick_component(data_shape: dict, user_intent: str) -> dict:

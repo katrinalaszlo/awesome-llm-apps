@@ -1,9 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { useCopilotReadable } from "@copilotkit/react-core";
 
 export function PasteArea() {
   const [rawInput, setRawInput] = useState("");
+
+  useCopilotReadable({
+    description:
+      "Data the user has pasted into the paste area. Use this as the raw input when the user asks to structure or analyze data.",
+    value: rawInput,
+  });
 
   return (
     <div className="h-full flex flex-col p-6 gap-4">
