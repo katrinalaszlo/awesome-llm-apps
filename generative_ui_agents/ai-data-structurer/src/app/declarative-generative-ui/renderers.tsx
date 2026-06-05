@@ -279,7 +279,7 @@ const demonstrationCatalogRenderers: CatalogRenderers<DemonstrationCatalogDefini
             >
               {props.value}
             </span>
-            {props.trend && props.trendValue && (
+            {props.trend && props.trend !== "neutral" && props.trendValue && (
               <span
                 style={{
                   fontSize: "0.8rem",
