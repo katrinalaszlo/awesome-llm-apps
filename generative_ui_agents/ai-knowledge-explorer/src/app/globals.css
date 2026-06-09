@@ -55,6 +55,26 @@
   --ring: #85ecce;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --background: #010507;
+    --foreground: #ffffff;
+    --card: #191a1e;
+    --card-foreground: #ffffff;
+    --primary: #ffffff;
+    --primary-foreground: #010507;
+    --secondary: #242529;
+    --secondary-foreground: #ffffff;
+    --muted: #242529;
+    --muted-foreground: #adadb2;
+    --accent: #1a2f28;
+    --accent-foreground: #ffffff;
+    --border: #303136;
+    --input: #303136;
+    --ring: #85ecce;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -66,7 +86,14 @@ html {
   height: 100%;
 }
 
-/* Style CopilotKit's + button as a file upload trigger */
+/* Hide CopilotKit's + menu button and notification banner */
+[data-testid="copilot-add-menu-button"] {
+  display: none !important;
+}
+[data-copilotkit] [class*="announcement"],
+[data-copilotkit] a[href*="copilotkit.ai"] {
+  display: none !important;
+}
 
 .json-blob-collapsed {
   font-size: 11px;
@@ -92,7 +119,7 @@ html {
 }
 
 /* Hide JSON blobs immediately during streaming — collapser refines later */
-.json-collapse-chat [data-json-hidden="true"] {
+[data-copilotkit] [data-json-hidden="true"] {
   max-height: 1.5em;
   overflow: hidden;
   position: relative;
@@ -100,7 +127,7 @@ html {
   opacity: 0.5;
   font-size: 11px;
 }
-.json-collapse-chat [data-json-hidden="true"]::after {
+[data-copilotkit] [data-json-hidden="true"]::after {
   content: "Click to view raw data";
   position: absolute;
   inset: 0;
@@ -111,12 +138,12 @@ html {
   color: var(--muted-foreground, #888);
   opacity: 1;
 }
-.json-collapse-chat [data-json-hidden="true"].json-expanded {
+[data-copilotkit] [data-json-hidden="true"].json-expanded {
   max-height: 200px;
   overflow: auto;
   opacity: 0.6;
   font-size: 10px;
 }
-.json-collapse-chat [data-json-hidden="true"].json-expanded::after {
+[data-copilotkit] [data-json-hidden="true"].json-expanded::after {
   display: none;
 }

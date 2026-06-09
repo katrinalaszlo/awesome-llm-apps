@@ -7,8 +7,10 @@ from copilotkit import CopilotKitMiddleware, StateStreamingMiddleware, StateItem
 from src.state import AgentState
 from src.tools import query_database, propose_mutation, execute_mutation
 from src.db import get_schema_context
+from src.seed import seed_if_needed
 
 load_dotenv()
+seed_if_needed()
 
 model = ChatOpenAI(
     model=os.getenv("OPENAI_MODEL", "gpt-5.5"),
